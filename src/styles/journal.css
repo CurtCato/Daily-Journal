@@ -2,22 +2,26 @@ fieldset {
     display: flex;
     flex-direction: column;
     border-color: blue;
-    align-content: center; 
-    font-size: 25px;
-    justify-content: space-around;
+    font-size: 35px;
+    text-align: center;
 }
 
 h1 {
     font-display: bold;
     font-size: 60px;
+    text-align: center;
 }
 
-body {
-    text-align:center;
+#concepts {
+    width:90%;
+    height: 50px;
 }
 
 textarea {
     width: 90%;
-    height: 100px;
+    height:100px;
 }
 
+#date {
+    align-content: center;
+}
