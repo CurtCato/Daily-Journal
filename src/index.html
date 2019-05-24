@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Daily Journal</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/journal.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="styles/journal.css"
+    />
   </head>
   <body>
     <h1>Journal Entry</h1>
@@ -14,30 +19,27 @@
         <label for="journalDate">Date of entry</label>
         <input type="date" name="journalDate" id="journalDate" />
       </fieldset>
-    </form>
-    <form action="">
+
       <fieldset>
-          <label for="conceptsCovered">Concepts covered</label>
-          <input type="text" name="conceptsCovered" id="conceptsCovered">
+        <label for="conceptsCovered">Concepts covered</label>
+        <input type="text" name="conceptsCovered" id="conceptsCovered" />
       </fieldset>
-    </form>
-    <form>
-        <fieldset>
-            <label for="journalEntry">Journal entry</label>
-            <input type="text" name="journalEntry" id="journalEntry">
-        </fieldset>
-    </form>
-    <form>
-        <fieldset>
-            <label for="currentMood">Mood for the day</label>
-            <select name="currentMood" id="currentMood">
-                <option value="Happy">Happy</option>
-                <option value="Sad">Sad</option>
-                <option value="Indifferent">Indifferent</option>
-                <option value="Confused">Confused</option>
-                <option value="Brilliant">Brilliant</option>
-            </select>
-        </fieldset>
+
+      <fieldset>
+        <label for="journalEntry">Journal entry</label>
+        <input type="text" name="journalEntry" id="journalEntry" />
+      </fieldset>
+
+      <fieldset>
+        <label for="currentMood">Mood for the day</label>
+        <select name="currentMood" id="currentMood">
+          <option value="Happy">Happy</option>
+          <option value="Sad">Sad</option>
+          <option value="Indifferent">Indifferent</option>
+          <option value="Confused">Confused</option>
+          <option value="Brilliant">Brilliant</option>
+        </select>
+      </fieldset>
     </form>
     <button type="Button">Record Journal Entry</button>
   </body>
