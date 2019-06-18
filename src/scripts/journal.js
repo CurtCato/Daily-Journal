@@ -1,21 +1,11 @@
-const entriesContainer = document.querySelector("#entryLog");
+/*
+    Main application logic that uses the functions and objects
+    defined in the other JavaScript files.
 
-const formatJournalEntries = taco => {
-  return `
-  <article>
-    <h1>${taco.date}</h1>
-    <h2>${taco.concepts_covered}</h2>
-    <p>${taco.long_form_contents}</p>
-    <p>${taco.mood}</p>
-  </article>`;
-};
+    Change the fake variable names below to what they should be
+    to get the data and display it.
+*/
+// objectWithGetterMethod.methodToGetData().then(functionThatRendersData)
 
-fetch("http://localhost:3000/entries") // Fetch from the API
-  .then(entries => entries.json()) // Parse as JSON
-  .then(parsedEntries => {
-    parsedEntries.forEach(entries => {
-      // console.log(entries)
-      const entriesAsHTML = formatJournalEntries(entries);
-      entriesContainer.innerHTML += entriesAsHTML;
-    });
-  });
+
+API.getJournalEntries().then(renderJournalEntry)
