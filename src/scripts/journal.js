@@ -1,11 +1,42 @@
-/*
-    Main application logic that uses the functions and objects
-    defined in the other JavaScript files.
+API.getJournalEntries().then(renderJournalEntry);
 
-    Change the fake variable names below to what they should be
-    to get the data and display it.
-*/
-// objectWithGetterMethod.methodToGetData().then(functionThatRendersData)
+document.getElementById("saveBtn").addEventListener("click", createEntryObj);
 
+function createEntryObj() {
+  let journalDate = document.getElementById("journalDate").value;
+  let conceptsCovered = document.getElementById("conceptsCovered").value;
+  let longFormContents = document.getElementById("longFormContents").value;
+  let mood = document.getElementById("mood").value
+  let entryObj = {
+    date: "",
+    conceptsCovered: "",
+    longFormContents: "",
+    mood: "",
+  };
+  entryObj.date = journalDate;
+  entryObj.conceptsCovered = conceptsCovered;
+  entryObj.longFormContents = longFormContents;
+  entryObj.mood = mood;
+  console.log(entryObj);
+  postEntry(entryObj);
+}
 
-API.getJournalEntries().then(renderJournalEntry)
+// Invoke the factory function, passing along the form field values
+
+// Use `fetch` with the POST method to add your entry to your API
+function postEntry(newJournalEntry) {
+  fetch("http://localhost:3000/entries", {
+    // Replace "url" with your API's URL
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(newJournalEntry)
+  })
+    .then(entry => entry.json())
+    .then(post => {
+      // journalEntryContainer.innerHTMl = ""
+      console.log(journalEntryContainer);
+      API.getJournalEntries().then(renderJournalEntry);
+    });
+}
