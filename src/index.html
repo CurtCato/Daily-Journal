@@ -17,22 +17,22 @@
     <form action="">
       <fieldset>
         <label for="journalDate">Date of entry</label>
-        <input id="date" type="date" name="journalDate" id="journalDate" />
+        <input type="date" name="journalDate" id="journalDate" />
       </fieldset>
 
       <fieldset>
         <label for="conceptsCovered">Concepts covered</label>
-        <input id=concepts type="text" name="conceptsCovered" id="conceptsCovered" />
+        <input type="text" name="conceptsCovered" id="conceptsCovered" />
       </fieldset>
 
       <fieldset>
         <label for="journalEntry">Journal entry</label>
-        <textarea name="journalEntry" id="journalEntry"></textarea>
+        <textarea name="journalEntry" id="longFormContents"></textarea>
       </fieldset>
 
       <fieldset>
         <label for="currentMood">Mood for the day</label>
-        <select name="currentMood" id="currentMood">
+        <select name="currentMood" id="mood">
           <option value="Happy">Happy</option>
           <option value="Sad">Sad</option>
           <option value="Indifferent">Indifferent</option>
@@ -41,8 +41,10 @@
         </select>
       </fieldset>
     </form>
-    <button type="Button">Record Journal Entry</button>
-    <div id="entryLog"></div>
+    <button id="saveBtn" type="Button">Record Journal Entry</button>
+    <div id="entryLog">
+
+    </div>
     <script src="./scripts/data.js"></script>
     <script src="./scripts/entryComponent.js"></script>
     <script src="./scripts/entriesDOM.js"></script>
