@@ -29,16 +29,26 @@
         <label for="journalEntry">Journal entry</label>
         <textarea name="journalEntry" id="longFormContents"></textarea>
       </fieldset>
-
+      
       <fieldset>
-        <label for="currentMood">Mood for the day</label>
-        <select name="currentMood" id="mood">
-          <option value="Happy">Happy</option>
-          <option value="Sad">Sad</option>
-          <option value="Indifferent">Indifferent</option>
-          <option value="Confused">Confused</option>
-          <option value="Brilliant">Brilliant</option>
-        </select>
+          <label for="currentMood">Mood for the day</label>
+          <select name="currentMood" id="mood">
+            <option value="Happy">Happy</option>
+            <option value="Sad">Sad</option>
+            <option value="Ok">Ok</option>
+          </select>
+        </fieldset>
+
+      <fieldset id="moodsField">
+      <div>
+        <legend>Mood Selection</legend><br>
+        <input type="radio" name="mood" value="Happy">
+        <label for="currentMood1">Happy</label>
+        <input type="radio" name="mood" value="Sad">
+        <label for="currentMood2">Sad</label>
+        <input type="radio" name="mood" value="Ok">
+        <label for="currentMood3">Ok</label>
+      </div>
       </fieldset>
     </form>
     <button id="saveBtn" type="Button">Record Journal Entry</button>

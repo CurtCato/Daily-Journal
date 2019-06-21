@@ -4,4 +4,3 @@ const API = {
             .then(response => response.json())
     }
 }
-

@@ -40,3 +40,15 @@ function postEntry(newJournalEntry) {
       API.getJournalEntries().then(renderJournalEntry);
     });
 }
+
+let radioBtn = document.getElementsByName("mood")
+radioBtn.forEach(radio => {
+  radio.addEventListener("click", event => {
+    let radio = event.target.value
+    console.log(radio)
+    API.getJournalEntries().then(placeholder => {
+      let moodString = placeholder.filter(entry => entry.mood === `${radio}`)
+      renderJournalEntry(moodString)
+    })
+  })
+})
