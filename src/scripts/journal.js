@@ -18,28 +18,16 @@ function createEntryObj() {
   entryObj.longFormContents = longFormContents;
   entryObj.mood = mood;
   console.log(entryObj);
-  postEntry(entryObj);
+  postEntry(entryObj)
+  .then(post => {
+    // journalEntryContainer.innerHTMl = ""
+    console.log(journalEntryContainer);
+    API.getJournalEntries().then(renderJournalEntry);
+  });
 }
 
 // Invoke the factory function, passing along the form field values
 
-// Use `fetch` with the POST method to add your entry to your API
-function postEntry(newJournalEntry) {
-  fetch("http://localhost:3000/entries", {
-    // Replace "url" with your API's URL
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(newJournalEntry)
-  })
-    .then(entry => entry.json())
-    .then(post => {
-      // journalEntryContainer.innerHTMl = ""
-      console.log(journalEntryContainer);
-      API.getJournalEntries().then(renderJournalEntry);
-    });
-}
 
 let radioBtn = document.getElementsByName("mood")
 radioBtn.forEach(radio => {
@@ -52,3 +40,9 @@ radioBtn.forEach(radio => {
     })
   })
 })
+
+// let deletePhantom = document.querySelectorAll(".deleteBtn")
+// console.log(deletePhantom)
+// deleteBtn.addEventListener("click", event => {
+//     console.log("clicked", event)
+//   })
