@@ -7,4 +7,5 @@ let renderJournalEntry = (arrayJournalEntry) => {
     journalEntryContainer.innerHTML += newJournalEntry;
   });
   createDeleteBtn()
+  createEditBtn()
 };

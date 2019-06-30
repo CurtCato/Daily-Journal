@@ -41,8 +41,4 @@ radioBtn.forEach(radio => {
   })
 })
 
-// let deletePhantom = document.querySelectorAll(".deleteBtn")
-// console.log(deletePhantom)
-// deleteBtn.addEventListener("click", event => {
-//     console.log("clicked", event)
-//   })
+
