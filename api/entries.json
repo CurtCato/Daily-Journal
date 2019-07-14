@@ -1,25 +1,18 @@
 {
   "entries": [
     {
-      "date": "5/31/2019",
-      "conceptsCovered": "Using GitBash and GitHub to create repo's, branches, pushes, pulls, etc.",
-      "longFormContents": "It took a day or so of messing around with this to grasp. Repeatedly using these programs during a group project helped immensly. It was the day of project presentation that I finally felt comfortable with these.",
-      "mood": "Hopeful",
-      "id": 2
-    },
-    {
-      "date": "6/3/2019-6/4/2019",
-      "conceptsCovered": "Looping through arrays, and objects. Old school for loops and using .forEach to make loops. Very good practice lessons.",
-      "longFormContents": "I struggle(d) with these concepts. Creating the syntax structure has been confusing for me to grasp. One thing I kept doing was confusing functions with loops.",
-      "mood": "Learning",
-      "id": 3
-    },
-    {
-      "date": "2019-06-21",
+      "date": "2019-07-10",
       "conceptsCovered": "stuff",
-      "longFormContents": "mo stuff",
+      "longFormConcepts": "more entries",
       "mood": "Happy",
-      "id": 4
+      "id": 1
+    },
+    {
+      "date": "",
+      "conceptsCovered": "asdfds",
+      "longFormConcepts": "asdfasd",
+      "mood": "Happy",
+      "id": 2
     }
   ]
 }
