@@ -26,12 +26,12 @@ function deleteEntry(id) {
   }).then(res => res.json());
 }
 
-function editEntry(editedEntry) {
-  return fetch(`http://localhost:8088/entries/${editedEntry.id}`, {
+function editEntry(newData, id) {
+  return fetch(`http://localhost:3000/entries/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify(editedEntry)
-  }).then(res => res.json());
+    body: JSON.stringify(newData)
+  })
 }

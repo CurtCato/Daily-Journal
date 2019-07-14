@@ -1,56 +1,55 @@
-const journalEntryComponent = entry => {
-  return `
-        <div class="journalEntrys">
-        <h2>${entry.date}</h2>
-        <h3>${entry.conceptsCovered}</h3>
-        <p>${entry.longFormContents}</p>
-        <p>${entry.mood}</p>
-        </div>
-        <button id="${
-          entry.id
-        }" class="deleteBtn" type="Button">Delete entry</button>
-        <button id="${
-          entry.id
-        }" class="editBtn" type="Button">Edit entry</button>
-        `;
+const renderJournalEntry = entryArr => {
+  let journalDisplay = document.querySelector("#entryLog");
+  journalDisplay.innerHTML = "";
+  entryArr.forEach(journalEntry => {
+    journalDisplay.appendChild(displayJournalEntries(journalEntry));
+    // editBtnListener(journalEntry);
+  });
 };
 
-function createDeleteBtn() {
-  let deletePhantom = document.querySelectorAll(".deleteBtn");
-  console.log(deletePhantom);
-  deletePhantom.forEach(button => {
+function saveChangesListener(entry) {
+  let saveChangesBtn = document.querySelector(`#saveChanges-${entry.id}`);
+  saveChangesBtn.addEventListener("click", () => {
+    let id = event.target.id.split("-")[1];
+    let newDate = document.querySelector("#editedJournalDate").value;
+    let newConcepts = document.querySelector("#editedConceptsCovered").value;
+    let newlongForm = document.querySelector("#longFormConcepts").value;
+    let newMood = document.querySelector("#editedMood").value;
+    let newJE = entriesFactory(newDate, newConcepts, newlongForm, newMood);
+    console.log(newJE);
+    editEntry(newJE, id).then(() => {
+      API.getJournalEntries().then(entries => renderJournalEntry(entries));
+    });
+  });
+}
+
+function createCancelEditBtn(entry) {
+  let cancelBtn = document.querySelector(`#cancelEdit-${entry.id}`);
+  cancelBtn.addEventListener("click", () => {
+    let clearEditField = document.querySelector(`#editDiv-${entry.id}`);
+    clearEditField.innerHTML = "";
+  });
+}
+
+function editBtnListener(entry) {
+  let editBtn = document.querySelectorAll(".editBtns");
+  editBtn.forEach(button => {
     button.addEventListener("click", event => {
-      //   console.log(event.target.id)
-      deleteEntry(event.target.id).then(word => {
+    let id = event.target.id.split("-")[1];
+    fetch(`http://localhost:3000/entries/${id}`).then(response =>
+    response.json()).then(createEditForm)
+    console.log(id);
+  });
+})
+}
+
+function deleteBtnListener() {
+  let deleteBtns = document.querySelectorAll(".deleteBtns");
+  deleteBtns.forEach(button => {
+    button.addEventListener("click", event => {
+      deleteEntry(event.target.id).then( () => {
         API.getJournalEntries().then(renderJournalEntry);
       });
     });
   });
 }
-
-function createEditForm(entry) {
-  console.log("yippie");
-  return `
-        <h1>HI</h1>
-        <button id="entry-edit-btn">Save</button>
-      `;
-}
-
-function createEditBtn(edit) {
-  let editThing = document.querySelectorAll(".editBtn");
-  let editForm = createEditForm();
-  editThing.forEach(editButton => {
-    editButton.addEventListener("click", event => {
-      let target = event.target.id
-      let thing = createEditForm(target)
-      console.log(thing);
-    });
-  });
-}
-
-
-{
-  /* <input id="entry-edit" name="entry-editor" type="text" value=${entry}> */
-}
-// <input type="hidden" id="entry-id" value=${entry.id}></input>
-

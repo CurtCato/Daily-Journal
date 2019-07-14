@@ -1,25 +1,18 @@
 {
   "entries": [
     {
-      "date": "2019-07-03",
-      "conceptsCovered": "test",
-      "longFormConcepts": "onetwothree",
-      "mood": "Ok",
-      "id": 4
-    },
-    {
-      "date": "2019-07-09",
-      "conceptsCovered": "stuff d",
-      "longFormConcepts": "more stuff",
-      "mood": "Happy",
-      "id": 5
-    },
-    {
       "date": "2019-07-10",
-      "conceptsCovered": "stuff d",
-      "longFormConcepts": "things",
+      "conceptsCovered": "stuff",
+      "longFormConcepts": "more entries",
       "mood": "Happy",
-      "id": 6
+      "id": 1
+    },
+    {
+      "date": "",
+      "conceptsCovered": "asdfds",
+      "longFormConcepts": "asdfasd",
+      "mood": "Happy",
+      "id": 2
     }
   ]
 }
